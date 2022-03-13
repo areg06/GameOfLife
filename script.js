@@ -1,6 +1,3 @@
-
-
-
 function matrixGenerator(l) {
     // Local matrix
     var m = [];
