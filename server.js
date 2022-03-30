@@ -121,3 +121,15 @@ io.on("connection", function (socket) {
     io.sockets.emit("send weath", weath);
   });
 });
+
+setInterval(function() {
+  statistics.grass = grassArr.length;
+  statistics.grassEater = grassEaterArr.length;
+  statistics.bomb = bombArr.length;
+  statistics.predator = predatorArr.length;
+  statistics.wave = waveArr.length;
+
+  fs.writeFile("statistics.json", JSON.stringify(statistics), function(){
+      console.log("send")
+  })
+},1000)
