@@ -1,4 +1,6 @@
-class Wave extends LivingCreature{
+const LivingCreature = require('./LivingCreature')
+
+module.exports = class Wave extends LivingCreature{
     constructor(x,y){
         super(x,y)
         this.directions = []
@@ -28,12 +30,11 @@ class Wave extends LivingCreature{
         let nextCell3 = this.chooseCell(3);
         let nextCell4 = this.chooseCell(4);
 
-
-        let newCell = random(nextCell);
-        let newCell1 = random(nextCell1);
-        let newCell2 = random(nextCell2);
-        let newCell3 = random(nextCell3)
-        let newCell4 = random(nextCell4)
+        let newCell = emptyCell[Math.floor(Math.random() * nextCell.length)];
+        let newCell1 = emptyCell[Math.floor(Math.random() * nextCell1.length)];
+        let newCell2 = emptyCell[Math.floor(Math.random() * nextCell2.length)];
+        let newCell3 = emptyCell[Math.floor(Math.random() * nextCell3.length)];
+        let newCell4 = emptyCell[Math.floor(Math.random() * nextCell4.length)];
 
 
         if (newCell) {
